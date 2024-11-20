@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generation</title>
+</head>
+<body>
+    <h1>Certificates Generated Successfully!</h1>
+    <p>The certificates have been generated, saved in the Excel file, and emailed to the participants.</p>
+    <p>Click the link below to download the updated Excel file:</p>
+    <a href="{{ url_for('download_file', filename=filename) }}" download>Download Excel File</a>
+</body>
+</html>

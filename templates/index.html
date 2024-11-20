@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator - NSS ADCET</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4e73df 0%, #1cc88a 100%);
+        }
+
+        /* Header Section */
+        .header {
+            position: relative;
+            background-image: url('/static/college.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 450px;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+            z-index: 1;
+            border-bottom: 5px solid #007bff;
+        }
+
+        .header .logos {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header .logos img {
+            height: 60px;
+            width: auto;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 55px;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+            margin-top: 50px;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            animation: fadeIn 3s ease-in-out;
+            margin-top: 20px;
+        }
+
+        /* Animation for fade-in effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Tabs Placeholder */
+        .tabs-placeholder {
+            margin-top: 30px;
+            text-align: center;
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Vision & Goals Section */
+        .vision-goals {
+            padding: 50px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            margin-top: -100px;
+            z-index: 2;
+        }
+
+        .vision-goals h3 {
+            font-size: 2.2rem;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .vision-goals ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .vision-goals ul li {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .vision-goals ul li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-size: 1.5rem;
+        }
+
+        /* Main Content Section */
+        .container {
+            margin-top: -20px;
+            z-index: 3;
+        }
+
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            border: none;
+            padding: 30px;
+            margin-top: 30px;
+            transition: transform 0.3s ease;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button Style */
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            width: 100%;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #343a40;
+            color: white;
+            margin-top: 50px;
+        }
+
+        footer .social-icons {
+            margin-top: 20px;
+        }
+
+        footer .social-icons a {
+            color: #f8f9fa;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #007bff;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                padding-top: 50px;
+            }
+
+            .header h1 {
+                font-size: 40px;
+            }
+
+            .card {
+                margin-top: 20px;
+            }
+
+            .btn-custom {
+                font-size: 1rem;
+            }
+
+            .vision-goals h3 {
+                font-size: 1.8rem;
+            }
+
+            .tabs-placeholder {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section with Parallax Effect -->
+    <div class="header">
+        <div class="logos">
+            <img src="/static/nss logo.png" alt="NSS Logo">
+            <img src="/static/adcet logo.png" alt="ADCET Logo">
+        </div>
+        <h1>NSS Certificate Generator - ADCET</h1>
+        <p>Welcome to the NSS Certificate Generator Portal for <strong>Annasaheb Dange College of Engineering and Technology, Ashta</strong>. Generate certificates for all NSS volunteers quickly and efficiently.</p>
+    </div>
+
+    <!-- Tabs Placeholder (for future additions) -->
+    <div class="tabs-placeholder">
+        <p>Tabs will be added here in the future. Stay tuned!</p>
+    </div>
+
+    <!-- Vision & Goals Section -->
+    <div class="vision-goals">
+        <div class="container">
+            <h3>Vision and Goals of NSS</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Vision</h5>
+                    <p>The vision of NSS is to develop a sense of social responsibility and awareness in students through various social services and community development programs.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Goals</h5>
+                    <ul>
+                        <li>To understand the community in which they live and work.</li>
+                        <li>To understand themselves in relation to their community.</li>
+                        <li>To develop capacity to meet the needs and the problems of the community in a socially responsible manner.</li>
+                        <li>To engage in activities that enhance the personal and collective development of the volunteers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Generation Form -->
+    <div class="container">
+        <div class="card">
+            <h4>Generate Your NSS Certificate</h4>
+            <form action="/generate_certificate" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="excel_file">Upload Excel File of NSS Volunteers:</label>
+                    <input type="file" id="excel_file" name="excel_file" accept=".xlsx" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <a href="uploads/template.xlsx" class="btn btn-info" target="_blank" role="button">Download Template Excel File</a>
+                </div>
+                <button type="submit" class="btn btn-custom">Generate and Send Certificates</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer with Social Media Links -->
+    <footer>
+        <p>&copy; 2024 NSS ADCET. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="mailto:adcetnss@gmail.com" target="_blank" class="fas fa-envelope"></a>
+            <a href="https://www.instagram.com/nss.adcet?igsh=MWVwaDVpdHI4cm9rZQ==" target="_blank" class="fab fa-instagram"></a>
+            <a href="https://www.facebook.com/share/19nn3hRLQu/" target="_blank" class="fab fa-facebook-f"></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
